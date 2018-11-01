@@ -11,7 +11,18 @@ namespace ProductCalculator
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = App.CreateMainPage();
+        }
+
+        public static Page CreateMainPage()
+        {
+            var mainPage = new MainPage() { BindingContext = new MainViewModel() };
+            var navigationPage = new NavigationPage(mainPage)
+            {
+                BarBackgroundColor = (Color)Current.Resources["Header"],
+                BarTextColor = Color.White
+            };
+            return navigationPage;
         }
 
         protected override void OnStart()
