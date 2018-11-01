@@ -1,5 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ProductCalculator.App">
     <Application.Resources>
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+
+            <!--Colors-->
+            <Color x:Key="Header">#458c33</Color>
+            <Color x:Key="Primary">#2e912e</Color>
+            <Color x:Key="PrimaryDark">#2e7d32</Color>
+            <Color x:Key="PrimaryLight">#a1cf91</Color>
+            <Color x:Key="Accent">#8BC34A</Color>
+            <Color x:Key="PrimaryText">#212121</Color>
+            <Color x:Key="SecondaryText">#757575</Color>
+            <Color x:Key="Icons">#FFFFFF</Color>
+            <Color x:Key="Divider">#BDBDBD</Color>
+            
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
