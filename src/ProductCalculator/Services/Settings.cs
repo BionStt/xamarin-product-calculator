@@ -1,4 +1,7 @@
 ﻿using System;
+using Plugin.Settings;
+using Plugin.Settings.Abstractions;
+
 namespace ProductCalculator.Services
 {
     public static class Settings
