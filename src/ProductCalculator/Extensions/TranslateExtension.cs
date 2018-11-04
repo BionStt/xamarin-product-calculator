@@ -21,11 +21,11 @@ namespace ProductCalculator.Extensions
         {
             if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.Android)
             {
-                ci = DependencyService.Get<ILocalizeService>().GetCurrentCultureInfo();
+                ci = DependencyService.Get<ILocalize>().GetCurrentCultureInfo();
                 var langCode = Settings.SelectedLanguageCode;
                 ci = new CultureInfo(langCode);
                 Resources.AppResources.Culture = ci; // set the RESX for resource localization
-                DependencyService.Get<ILocalizeService>().SetLocale(ci); // set the Thread for locale-aware methods
+                DependencyService.Get<ILocalize>().SetLocale(ci); // set the Thread for locale-aware methods
             }
         }
 

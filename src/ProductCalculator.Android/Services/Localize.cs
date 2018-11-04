@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Globalization;
 using System.Threading;
-using Foundation;
-using ProductCalculator.iOS.Services;
+using ProductCalculator.Droid.Services;
 using ProductCalculator.Services;
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(LocalizeService))]
-namespace ProductCalculator.iOS.Services
+[assembly: Dependency(typeof(Localize))]
+namespace ProductCalculator.Droid.Services
 {
-    public class LocalizeService : ILocalizeService
+    public class Localize : ILocalize
     {
         public void SetLocale(CultureInfo ci)
         {
@@ -19,11 +18,8 @@ namespace ProductCalculator.iOS.Services
         public CultureInfo GetCurrentCultureInfo()
         {
             var netLanguage = "en";
-            if (NSLocale.PreferredLanguages.Length > 0)
-            {
-                var pref = NSLocale.PreferredLanguages[0];
-                netLanguage = iOSToDotnetLanguage(pref);
-            }
+            var androidLocale = Java.Util.Locale.Default;
+            netLanguage = AndroidToDotnetLanguage(androidLocale.ToString().Replace("_", "-"));
             // this gets called a lot - try/catch can be expensive so consider caching or something
             System.Globalization.CultureInfo ci = null;
             try
@@ -47,15 +43,19 @@ namespace ProductCalculator.iOS.Services
             }
             return ci;
         }
-        string iOSToDotnetLanguage(string iOSLanguage)
+        string AndroidToDotnetLanguage(string androidLanguage)
         {
-            var netLanguage = iOSLanguage;
+            var netLanguage = androidLanguage;
             //certain languages need to be converted to CultureInfo equivalent
-            switch (iOSLanguage)
+            switch (androidLanguage)
             {
+                case "ms-BN":   // "Malaysian (Brunei)" not supported .NET culture
                 case "ms-MY":   // "Malaysian (Malaysia)" not supported .NET culture
                 case "ms-SG":   // "Malaysian (Singapore)" not supported .NET culture
                     netLanguage = "ms"; // closest supported
+                    break;
+                case "in-ID":  // "Indonesian (Indonesia)" has different code in  .NET
+                    netLanguage = "id-ID"; // correct code for .NET
                     break;
                 case "gsw-CH":  // "Schwiizertüütsch (Swiss German)" not supported .NET culture
                     netLanguage = "de-CH"; // closest supported
@@ -70,9 +70,6 @@ namespace ProductCalculator.iOS.Services
             var netLanguage = platCulture.LanguageCode; // use the first part of the identifier (two chars, usually);
             switch (platCulture.LanguageCode)
             {
-                case "pt":
-                    netLanguage = "pt-PT"; // fallback to Portuguese (Portugal)
-                    break;
                 case "gsw":
                     netLanguage = "de-CH"; // equivalent to German (Switzerland) for this app
                     break;
