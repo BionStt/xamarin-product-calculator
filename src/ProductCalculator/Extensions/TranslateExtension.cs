@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
+using ProductCalculator.Resources;
 using ProductCalculator.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,7 +13,7 @@ namespace ProductCalculator.Extensions
     public class TranslateExtension : IMarkupExtension
     {
         readonly CultureInfo ci;
-        const string ResourceId = "SMFive.Pretension.Calculator.Resources.AppResources";
+        private static readonly string ResourceId = typeof(AppResources).FullName;
 
         private static readonly Lazy<ResourceManager> ResMgr = new Lazy<ResourceManager>(() => new ResourceManager(ResourceId
                                                                                                                   , typeof(TranslateExtension).GetTypeInfo().Assembly));
