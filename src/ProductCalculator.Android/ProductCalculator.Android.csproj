@@ -68,6 +68,7 @@
     <Compile Include="Renderers\CrossEditorRenderer.cs" />
     <Compile Include="Renderers\CrossEntryRenderer.cs" />
     <Compile Include="Renderers\CrossPickerRenderer.cs" />
+    <Compile Include="Services\FontManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
