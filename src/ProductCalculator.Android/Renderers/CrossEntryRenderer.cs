@@ -5,19 +5,18 @@ using ProductCalculator.Droid.Renderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(Editor), typeof(CrossEditorRenderer))]
+[assembly: ExportRenderer(typeof(Entry), typeof(CrossEntryRenderer))]
 namespace ProductCalculator.Droid.Renderers
 {
-    public class CrossEditorRenderer : EditorRenderer
+    public class CrossEntryRenderer : EntryRenderer
     {
-        public CrossEditorRenderer(Context context) : base(context)
+        public CrossEntryRenderer(Context context) : base(context)
         {
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);
-
 
             if (Control == null)
                 return;
@@ -31,6 +30,7 @@ namespace ProductCalculator.Droid.Renderers
         protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
+
             if (this.Element == null)
                 return;
 

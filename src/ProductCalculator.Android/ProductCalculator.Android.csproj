@@ -66,6 +66,7 @@
     <Compile Include="LauncherActivity.cs" />
     <Compile Include="Services\Localize.cs" />
     <Compile Include="Renderers\CrossEditorRenderer.cs" />
+    <Compile Include="Renderers\CrossEntryRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
