@@ -15,6 +15,10 @@
             <Color x:Key="Icons">#FFFFFF</Color>
             <Color x:Key="Divider">#BDBDBD</Color>
             
+            <!--Converters-->
+            <converters:BoolInversionConverter x:Key="BoolInversionConverter" />
+            <converters:NullableFloatConverter x:Key="NullableFloatConverter" />
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>
