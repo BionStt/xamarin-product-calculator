@@ -67,6 +67,7 @@
     <Compile Include="Services\Localize.cs" />
     <Compile Include="Renderers\CrossEditorRenderer.cs" />
     <Compile Include="Renderers\CrossEntryRenderer.cs" />
+    <Compile Include="Renderers\CrossPickerRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
