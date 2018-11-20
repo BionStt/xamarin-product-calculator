@@ -6,16 +6,17 @@ using ProductCalculator.Droid.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(Button), typeof(CrossButtonRenderer))]
+[assembly: ExportRenderer(typeof(Label), typeof(CrossLabelRenderer))]
 namespace ProductCalculator.Droid.Renderers
 {
-    public class CrossButtonRenderer : ButtonRenderer
+    public class CrossLabelRenderer : LabelRenderer
     {
-        public CrossButtonRenderer(Context context) : base(context)
+
+        public CrossLabelRenderer(Context context) : base(context)
         {
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Label> e)
         {
             base.OnElementChanged(e);
 
@@ -38,7 +39,7 @@ namespace ProductCalculator.Droid.Renderers
             if (Element == null)
                 return;
 
-            if (e.PropertyName == Button.FontFamilyProperty.PropertyName)
+            if (e.PropertyName == Label.FontFamilyProperty.PropertyName)
             {
                 FontManager.Current.ChangeFont(Control, Element.FontFamily);
             }

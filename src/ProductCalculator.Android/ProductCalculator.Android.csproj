@@ -70,6 +70,7 @@
     <Compile Include="Renderers\CrossPickerRenderer.cs" />
     <Compile Include="Services\FontManager.cs" />
     <Compile Include="Renderers\CrossButtonRenderer.cs" />
+    <Compile Include="Renderers\CrossLabelRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

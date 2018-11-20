@@ -33,7 +33,10 @@ namespace ProductCalculator.Droid.Renderers
         {
             base.OnElementPropertyChanged(sender, e);
 
-            if (this.Element == null)
+            if (Control == null)
+                return;
+
+            if (Element == null)
                 return;
 
             if (e.PropertyName == VisualElement.BackgroundColorProperty.PropertyName)
