@@ -2,6 +2,7 @@
 using Android.Content;
 using Android.Graphics.Drawables;
 using ProductCalculator.Droid.Renderers;
+using ProductCalculator.Droid.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
@@ -25,6 +26,7 @@ namespace ProductCalculator.Droid.Renderers
                 return;
 
             this.Control.Background = new ColorDrawable(Element.BackgroundColor.ToAndroid());
+            FontManager.Current.ChangeFont(Control, Element.FontFamily);
         }
 
         protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -37,6 +39,10 @@ namespace ProductCalculator.Droid.Renderers
             if (e.PropertyName == VisualElement.BackgroundColorProperty.PropertyName)
             {
                 this.Control.Background = new ColorDrawable(Element.BackgroundColor.ToAndroid());
+            }
+            else if (e.PropertyName == Entry.FontFamilyProperty.PropertyName)
+            {
+                FontManager.Current.ChangeFont(Control, Element.FontFamily);
             }
         }
     }
