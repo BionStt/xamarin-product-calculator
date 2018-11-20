@@ -52,5 +52,11 @@ namespace ProductCalculator.Resources {
                 return ResourceManager.GetString("ProductName", resourceCulture);
             }
         }
+        
+        public static string ContactButton {
+            get {
+                return ResourceManager.GetString("ContactButton", resourceCulture);
+            }
+        }
     }
 }

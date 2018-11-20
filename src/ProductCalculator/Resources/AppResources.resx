@@ -17,4 +17,8 @@
         <value>Product Calculator</value>
         <comment>AppName Label on Home Page</comment>
     </data>
+    <data name="ContactButton" xml:space="preserve">
+        <value>Contact Us</value>
+        <comment></comment>
+    </data>
 </root>

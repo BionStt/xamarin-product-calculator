@@ -17,10 +17,43 @@
             <Color x:Key="SecondaryText">#757575</Color>
             <Color x:Key="Icons">#FFFFFF</Color>
             <Color x:Key="Divider">#BDBDBD</Color>
-            
+
             <!--Converters-->
             <converters:BoolInversionConverter x:Key="BoolInversionConverter" />
             <converters:NullableFloatConverter x:Key="NullableFloatConverter" />
+            
+            <!--Styles-->
+            <Style x:Key="ContactFooterLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{DynamicResource Icons}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="9" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="HomeButton" TargetType="Button">
+                <Setter Property="TextColor" Value="{DynamicResource Icons}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryLight}" />
+                <Setter Property="FontSize" Value="Large" />
+            </Style>
+
+            <Style x:Key="ContentButton" TargetType="Button">
+                <Setter Property="TextColor" Value="{DynamicResource Icons}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource Primary}" />
+                <Setter Property="FontSize" Value="Medium" />
+            </Style>
+
+            <Style x:Key="TextButton" TargetType="Button">
+                <Setter Property="TextColor" Value="{DynamicResource Icons}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="BorderColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
+
+            <Style x:Key="ContainerFrame" TargetType="Frame">
+                <Setter Property="OutlineColor" Value="{DynamicResource PrimaryLight}" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryLight}" />
+                <Setter Property="HasShadow" Value="false" />
+            </Style>
             
         </ResourceDictionary>
     </Application.Resources>

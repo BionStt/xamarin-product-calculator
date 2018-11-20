@@ -1,4 +1,6 @@
 ﻿using System;
+using ProductCalculator.Pages;
+using ProductCalculator.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,7 +18,7 @@ namespace ProductCalculator
 
         public static Page CreateMainPage()
         {
-            var mainPage = new MainPage() { BindingContext = new MainViewModel() };
+            var mainPage = new HomePage() { BindingContext = new HomeViewModel() };
             var navigationPage = new NavigationPage(mainPage)
             {
                 BarBackgroundColor = (Color)Current.Resources["Header"],

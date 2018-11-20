@@ -1,5 +1,71 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ProductCalculator.Pages.HomePage">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="ProductCalculator.Pages.HomePage"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
+             xmlns:i18n="clr-namespace:ProductCalculator.Extensions;assembly=ProductCalculator">
+    <xfg:ContentPageGloss.BackgroundGradient>
+        <xfg:Gradient Rotation="180">
+           <xfg:GradientStep StepColor="{StaticResource PrimaryLight}" StepPercentage="0" />
+            <xfg:GradientStep StepColor="{StaticResource Primary}" StepPercentage="0.25" />
+           <xfg:GradientStep StepColor="{StaticResource Header}" StepPercentage="1" />
+      </xfg:Gradient>
+    </xfg:ContentPageGloss.BackgroundGradient>
     <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="90*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="1" Grid.Column="1"
+                Padding="10,0,10,0"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center">
+                <Image
+                    Source="BrecoflexLogo.png"
+                    HorizontalOptions="Center"/>
+                <Label Text="{Binding AppName}" 
+                    FontSize="14"
+                    TextColor="{StaticResource Icons}"
+                    HorizontalTextAlignment="Center" />
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="1"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Start">
+                <Button x:Name="contactButton"
+                    Text="{Binding ContactButton}" 
+                    Command="{Binding ContactCommand}"
+                    Style="{StaticResource HomeButton}" />
+                <Picker 
+                    x:Name="languagePicker"
+                    IsVisible="false"
+                    IsEnabled="true"
+                    InputTransparent="true"
+                    Title="Select Language"
+                    ItemsSource="{Binding Languages}"
+                    SelectedIndex="{Binding SelectedLanguageIndex}"
+                    ItemDisplayBinding="{Binding Name}"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3" Grid.Column="1"
+                Orientation="Horizontal" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Fill"
+                Spacing="5">
+                <Image Source="ic_language_white.png"
+                    VerticalOptions="Center"/>
+                <Button x:Name="languageButton"
+                    VerticalOptions="Center"
+                    Text="{Binding SelectedLanguage}" 
+                    Style="{StaticResource TextButton}" />
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
