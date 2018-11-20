@@ -69,6 +69,7 @@
     <Compile Include="Renderers\CrossEntryRenderer.cs" />
     <Compile Include="Renderers\CrossPickerRenderer.cs" />
     <Compile Include="Services\FontManager.cs" />
+    <Compile Include="Renderers\CrossButtonRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -101,12 +102,21 @@
     <Folder Include="Resources\drawable-xxxhdpi\" />
     <Folder Include="Services\" />
     <Folder Include="Renderers\" />
+    <Folder Include="Assets\Fonts\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProductCalculator\ProductCalculator.csproj">
       <Project>{259E5432-3413-49C7-A92E-99E8F94F4A0E}</Project>
       <Name>ProductCalculator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="..\..\resources\fonts\Source_Sans_Pro\SourceSansPro-Regular.ttf">
+      <Link>Assets\Fonts\SourceSansPro-Regular.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\resources\fonts\Source_Sans_Pro\SourceSansPro-Bold.ttf">
+      <Link>Assets\Fonts\SourceSansPro-Bold.ttf</Link>
+    </AndroidAsset>
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
