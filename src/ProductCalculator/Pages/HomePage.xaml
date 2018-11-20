@@ -40,6 +40,7 @@
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="Start">
                 <Button x:Name="contactButton"
+                    FontFamily="SourceSansPro-Regular"
                     Text="{Binding ContactButton}" 
                     Command="{Binding ContactCommand}"
                     Style="{StaticResource HomeButton}" />
