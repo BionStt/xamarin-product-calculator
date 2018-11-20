@@ -24,6 +24,7 @@ namespace ProductCalculator.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             FontManager.Current
@@ -44,6 +45,8 @@ namespace ProductCalculator.Droid
                 var darkPrimaryColor = (Color) Xamarin.Forms.Application.Current.Resources["PrimaryDark"];
                 Window.SetStatusBarColor(darkPrimaryColor.ToAndroid());
             }
+
+            XFGloss.Droid.Library.Init(this, savedInstanceState);
         }
     }
 }
