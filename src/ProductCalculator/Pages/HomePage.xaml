@@ -40,6 +40,10 @@
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="Start"
                 IsVisible="true">
+                <Button x:Name="calculatorButton"
+                    Text="{Binding CalculatorButton}" 
+                    Command="{Binding CalculatorCommand}"
+                    Style="{StaticResource HomeButton}" />
                 <Button x:Name="contactButton"
                     FontFamily="SourceSansPro-Regular"
                     Text="{Binding ContactButton}" 

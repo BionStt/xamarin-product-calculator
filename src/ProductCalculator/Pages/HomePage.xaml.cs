@@ -11,8 +11,13 @@ namespace ProductCalculator.Pages
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            calculatorButton.Clicked +=
+                async (_, e) => await Navigation.PushAsync(new CalculatorPage()
+                {
+                    BindingContext = new CalculatorViewModel()
+                });
             contactButton.Clicked +=
-                async (sender, e) => await Navigation.PushAsync(new ContactPage()
+                async (_, e) => await Navigation.PushAsync(new ContactPage()
                 {
                     BindingContext = new ContactViewModel()
                 });

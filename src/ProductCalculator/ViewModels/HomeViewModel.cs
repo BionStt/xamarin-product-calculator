@@ -19,6 +19,7 @@ namespace ProductCalculator.ViewModels
         }
 
         public string AppName => AppResources.ProductName;
+        public string CalculatorButton => AppResources.CalculatorButton;
         public string ContactButton => AppResources.ContactButton;
 
         public IList<Language> Languages => new List<Language>()

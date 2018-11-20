@@ -15,7 +15,11 @@
     
     <data name="ProductName" xml:space="preserve">
         <value>Product Calculator</value>
-        <comment>AppName Label on Home Page</comment>
+        <comment></comment>
+    </data>
+    <data name="CalculatorButton" xml:space="preserve">
+        <value>Run Calculator</value>
+        <comment></comment>
     </data>
     <data name="ContactButton" xml:space="preserve">
         <value>Contact Us</value>
