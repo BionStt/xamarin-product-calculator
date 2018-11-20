@@ -1,5 +1,68 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ProductCalculator.Pages.CalculatorPage">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="ProductCalculator.Pages.CalculatorPage"
+             xmlns:xfg="clr-namespace:XFGloss;assembly=XFGloss"
+             xmlns:i18n="clr-namespace:ProductCalculator.Extensions;assembly=ProductCalculator">
+    <xfg:ContentPageGloss.BackgroundGradient>
+        <xfg:Gradient Rotation="180">
+           <xfg:GradientStep StepColor="#ffffff" StepPercentage="0" />
+            <xfg:GradientStep StepColor="#ffffff" StepPercentage="0.25" />
+           <xfg:GradientStep StepColor="#ECE9E6" StepPercentage="1" />
+      </xfg:Gradient>
+    </xfg:ContentPageGloss.BackgroundGradient>
     <ContentPage.Content>
+        <Grid Padding="0,0,0,10" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="15*" />
+                <RowDefinition Height="77*" />
+                <RowDefinition Height="8*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <BoxView Grid.Row="0" Grid.Column="0" 
+                Grid.ColumnSpan="3"
+                Color="{StaticResource PrimaryDark}"
+                HeightRequest="20"
+                HorizontalOptions="Fill" VerticalOptions="Fill">
+                <BoxView.IsVisible>
+                    <OnPlatform x:TypeArguments="x:Boolean" iOS="true" Android="false" WinPhone="false" />
+                </BoxView.IsVisible>
+            </BoxView>
+            
+            <ScrollView Grid.Row="2" Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Padding="0,10,0,10"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill">
+                <Grid Padding="30,0,30,0"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label 
+                        Grid.Row="0" Grid.Column="0"
+                        FontFamily="SourceSansPro-Regular"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Text="Put your content here" />
+                </Grid>
+            </ScrollView>
+
+            <Button Grid.Row="3" Grid.Column="1"
+                Style="{StaticResource ContentButton}"
+                HorizontalOptions="Fill" Text="{i18n:Translate ProductName}"
+                Command="{Binding ResetAllCommand}"
+                VerticalOptions="Center"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
