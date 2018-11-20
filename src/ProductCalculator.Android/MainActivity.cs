@@ -6,6 +6,7 @@ using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using ProductCalculator.Droid.Services;
 
 namespace ProductCalculator.Droid
 {
@@ -24,6 +25,11 @@ namespace ProductCalculator.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            FontManager.Current
+                .RegisterTypeFace("Fonts/SourceSansPro-Regular.ttf")
+                .RegisterTypeFace("Fonts/SourceSansPro-Bold.ttf");
+
             LoadApplication(new App());
 
             if (Build.VERSION.SdkInt >= BuildVersionCodes.Lollipop)
