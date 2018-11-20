@@ -38,7 +38,8 @@
             </StackLayout>
             <StackLayout Grid.Row="2" Grid.Column="1"
                 HorizontalOptions="FillAndExpand"
-                VerticalOptions="Start">
+                VerticalOptions="Start"
+                IsVisible="true">
                 <Button x:Name="contactButton"
                     FontFamily="SourceSansPro-Regular"
                     Text="{Binding ContactButton}" 
@@ -56,6 +57,7 @@
             </StackLayout>
 
             <StackLayout Grid.Row="3" Grid.Column="1"
+                IsVisible="false"
                 Orientation="Horizontal" 
                 HorizontalOptions="Center" 
                 VerticalOptions="Fill"
